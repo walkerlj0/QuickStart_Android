@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="100" parallel="methods" name="Failed suite [Android Native Demo Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="100" parallel="methods" name="Simple execution tests Android(failed)" verbose="0">
+    <classes>
+      <class name="tests.Mobile_Native_Local_Test">
+        <methods>
+          <include name="loginTestValidProblem"/>
+          <include name="setup"/>
+          <include name="loginToSwagLabsTestValid"/>
+          <include name="teardown"/>
+        </methods>
+      </class> <!-- tests.Mobile_Native_Local_Test -->
+    </classes>
+  </test> <!-- Simple execution tests Android(failed) -->
+</suite> <!-- Failed suite [Android Native Demo Suite] -->
