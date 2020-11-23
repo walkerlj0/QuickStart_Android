@@ -45,7 +45,7 @@ public class Mobile_Native_Local_Test {
         capabilities.setCapability("app", "/Users/lindsaywalker/Documents/Example_Tests/" + appName);
         serverUrl = new URL("http://localhost:4723/wd/hub"); //Is this correct?
 
-        //        capabilities.setCapability("appActivity", "com.swaglabsmobileapp.MainActivity"); //Is this needed?
+        capabilities.setCapability("appActivity", "com.swaglabsmobileapp.MainActivity"); //Is this needed?
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
         capabilities.setCapability("automationName", "UiAutomator2"); //Why not Espresso? How do I know?
 
