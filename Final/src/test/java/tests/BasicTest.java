@@ -2,24 +2,17 @@ package tests;
 
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Before;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Method;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 
@@ -45,7 +38,7 @@ public class BasicTest {
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
         capabilities.setCapability("app", APP);
-        capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
+
 
         driver = new AndroidDriver(new URL(APPIUM), capabilities);
 
@@ -65,7 +58,7 @@ public class BasicTest {
 
         login("standard_user", "secret_sauce");
 
-        // Verificsation
+        // Verification
         Assert.assertTrue(isOnProductsPage());
     }
 
@@ -75,7 +68,7 @@ public class BasicTest {
 
         login("problem_user", "secret_sauce");
 
-        // Verificsation - we on Product page
+        // Verification - we on Product page
         Assert.assertTrue(isOnProductsPage());
     }
 
@@ -87,11 +80,11 @@ public class BasicTest {
             usernameEdit.click();
             usernameEdit.sendKeys(user);
 
-        WebElement passwordEdit = (WebElement) driver.findElementByAccessibilityId(passwordID);
+        WebElement passwordEdit = driver.findElementByAccessibilityId(passwordID);
             passwordEdit.click();
             passwordEdit.sendKeys(pass);
 
-        WebElement submitButton = (WebElement) driver.findElementByAccessibilityId(submitButtonID);
+        WebElement submitButton = driver.findElementByAccessibilityId(submitButtonID);
             submitButton.click();
     }
 
