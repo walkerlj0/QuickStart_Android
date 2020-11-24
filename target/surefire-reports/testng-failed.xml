@@ -3,14 +3,13 @@
 <suite thread-count="100" parallel="methods" name="Failed suite [Android Native Demo Suite]" guice-stage="DEVELOPMENT" verbose="0">
   <test thread-count="100" parallel="methods" name="Simple execution tests Android(failed)" verbose="0">
     <classes>
-      <class name="tests.Mobile_Native_Local_Test">
+      <class name="tests.BasicTest">
         <methods>
-          <include name="loginTestValidProblem"/>
-          <include name="setup"/>
-          <include name="loginToSwagLabsTestValid"/>
-          <include name="teardown"/>
+          <include name="tearDown"/>
+          <include name="test"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- tests.Mobile_Native_Local_Test -->
+      </class> <!-- tests.BasicTest -->
     </classes>
   </test> <!-- Simple execution tests Android(failed) -->
 </suite> <!-- Failed suite [Android Native Demo Suite] -->

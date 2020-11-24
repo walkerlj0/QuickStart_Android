@@ -68,7 +68,7 @@ public class Mobile_Native_RDC_Test {
         }
 
         capabilities.setCapability("appActivity", "com.swaglabsmobileapp.MainActivity");
-        //        capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
+        capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
         capabilities.setCapability("automationName", "UiAutomator2"); //Why not Espresso?
 
         try {

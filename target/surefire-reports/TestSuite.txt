@@ -1,58 +1,9 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 4, Time elapsed: 36.743 s <<< FAILURE! - in TestSuite
-tests.Mobile_Native_Local_Test.setup  Time elapsed: 13.242 s  <<< FAILURE!
-java.lang.RuntimeException: 
-org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SL-1134', ip: 'fe80:0:0:0:ca2:8f99:dfaa:3651%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '14.0.2'
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output.
-    at getResponseForW3CError (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
-    at asyncHandler (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:381:37)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SL-1134', ip: 'fe80:0:0:0:ca2:8f99:dfaa:3651%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '14.0.2'
-Driver info: driver.version: AndroidDriver
-	at tests.Mobile_Native_Local_Test.setup(Mobile_Native_Local_Test.java:56)
-Caused by: org.openqa.selenium.SessionNotCreatedException: 
-Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SL-1134', ip: 'fe80:0:0:0:ca2:8f99:dfaa:3651%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '14.0.2'
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output.
-    at getResponseForW3CError (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
-    at asyncHandler (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:381:37)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SL-1134', ip: 'fe80:0:0:0:ca2:8f99:dfaa:3651%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '14.0.2'
-Driver info: driver.version: AndroidDriver
-	at tests.Mobile_Native_Local_Test.setup(Mobile_Native_Local_Test.java:53)
-Caused by: java.lang.reflect.InvocationTargetException
-	at tests.Mobile_Native_Local_Test.setup(Mobile_Native_Local_Test.java:53)
-Caused by: org.openqa.selenium.WebDriverException: 
-An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SL-1134', ip: 'fe80:0:0:0:ca2:8f99:dfaa:3651%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '14.0.2'
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: The instrumentation process cannot be initialized. Make sure the application under test does not crash and investigate the logcat output.
-    at getResponseForW3CError (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
-    at asyncHandler (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:381:37)
-	at tests.Mobile_Native_Local_Test.setup(Mobile_Native_Local_Test.java:53)
-
-tests.Mobile_Native_Local_Test.setup  Time elapsed: 36.478 s  <<< FAILURE!
-java.lang.RuntimeException: 
-org.openqa.selenium.SessionNotCreatedException: Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.swaglabsmobileapp' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'com.swaglabsmobileapp.SplashActivity' or 'com.swaglabsmobileapp.com.swaglabsmobileapp.SplashActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SL-1134', ip: 'fe80:0:0:0:ca2:8f99:dfaa:3651%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '14.0.2'
-Driver info: driver.version: AndroidDriver
-remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.swaglabsmobileapp' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'com.swaglabsmobileapp.SplashActivity' or 'com.swaglabsmobileapp.com.swaglabsmobileapp.SplashActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
-    at getResponseForW3CError (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
-    at asyncHandler (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:381:37)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'SL-1134', ip: 'fe80:0:0:0:ca2:8f99:dfaa:3651%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '14.0.2'
-Driver info: driver.version: AndroidDriver
-	at tests.Mobile_Native_Local_Test.setup(Mobile_Native_Local_Test.java:56)
-Caused by: org.openqa.selenium.SessionNotCreatedException: 
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 29.479 s <<< FAILURE! - in TestSuite
+tests.BasicTest.setUp  Time elapsed: 29.264 s  <<< FAILURE!
+org.openqa.selenium.SessionNotCreatedException: 
 Unable to create a new remote session. Please check the server log for more details. Original error: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.swaglabsmobileapp' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'com.swaglabsmobileapp.SplashActivity' or 'com.swaglabsmobileapp.com.swaglabsmobileapp.SplashActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SL-1134', ip: 'fe80:0:0:0:ca2:8f99:dfaa:3651%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '14.0.2'
@@ -63,9 +14,9 @@ remote stacktrace: UnknownError: An unknown server-side error occurred while pro
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'SL-1134', ip: 'fe80:0:0:0:ca2:8f99:dfaa:3651%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.7', java.version: '14.0.2'
 Driver info: driver.version: AndroidDriver
-	at tests.Mobile_Native_Local_Test.setup(Mobile_Native_Local_Test.java:53)
+	at tests.BasicTest.setUp(BasicTest.java:40)
 Caused by: java.lang.reflect.InvocationTargetException
-	at tests.Mobile_Native_Local_Test.setup(Mobile_Native_Local_Test.java:53)
+	at tests.BasicTest.setUp(BasicTest.java:40)
 Caused by: org.openqa.selenium.WebDriverException: 
 An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.swaglabsmobileapp' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'com.swaglabsmobileapp.SplashActivity' or 'com.swaglabsmobileapp.com.swaglabsmobileapp.SplashActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
@@ -74,5 +25,5 @@ Driver info: driver.version: AndroidDriver
 remote stacktrace: UnknownError: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.swaglabsmobileapp' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: 'com.swaglabsmobileapp.SplashActivity' or 'com.swaglabsmobileapp.com.swaglabsmobileapp.SplashActivity' never started. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting
     at getResponseForW3CError (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/errors.js:804:9)
     at asyncHandler (/Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-base-driver/lib/protocol/protocol.js:381:37)
-	at tests.Mobile_Native_Local_Test.setup(Mobile_Native_Local_Test.java:53)
+	at tests.BasicTest.setUp(BasicTest.java:40)
 

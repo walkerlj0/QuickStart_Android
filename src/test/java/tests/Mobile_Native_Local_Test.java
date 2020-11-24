@@ -39,7 +39,7 @@ public class Mobile_Native_Local_Test {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         String appName = "Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
         URL serverUrl;
-        capabilities.setCapability("deviceName", "Android Emulator"); //This will change to type of device e.g. Pixel 4 on Saucelabs
+        capabilities.setCapability("deviceName", "Android Emulator"); //This will change to type of device e.g. an emulator or iPhone.*
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion","9.0" ); //add platformVersion
         capabilities.setCapability("app", "/Users/lindsaywalker/Documents/Example_Tests/" + appName);
