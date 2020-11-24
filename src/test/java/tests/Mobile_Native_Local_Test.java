@@ -43,9 +43,8 @@ public class Mobile_Native_Local_Test {
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion","9.0" ); //add platformVersion
         capabilities.setCapability("app", "/Users/lindsaywalker/Documents/Example_Tests/" + appName);
-        serverUrl = new URL("http://localhost:4723/wd/hub"); //Is this correct?
-
-        capabilities.setCapability("appActivity", "com.swaglabsmobileapp.MainActivity"); //Is this needed?
+        serverUrl = new URL("http://localhost:4723/wd/hub");
+        // capabilities.setCapability("appActivity", "com.swaglabsmobileapp.MainActivity"); //Is this needed?
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
         capabilities.setCapability("automationName", "UiAutomator2"); //Why not Espresso? How do I know?
 
@@ -54,10 +53,10 @@ public class Mobile_Native_Local_Test {
         } catch (Exception e) {
             System.out.println("*** Problem creating the Android driver " + e.getMessage());
             throw new RuntimeException(e);
-        }// Can get rid of it for simplicity.
-        // Old String id = ((RemoteWebDriver) getAndroidDriver()).getSessionId().toString();
-        String id = getAndroidDriver().getSessionId().toString(); //Is this correct? Is this used?
-        sessionId.set(id);
+        }
+        String id = (getAndroidDriver()).getSessionId().toString();
+//        String id = getAndroidDriver().getSessionId().toString(); //Is this correct? Is this used?
+//        sessionId.set(id);
     }
 
     @AfterMethod
@@ -75,7 +74,7 @@ public class Mobile_Native_Local_Test {
 
     public  AndroidDriver getAndroidDriver() {
         return androidDriver.get();
-    }
+    } // ?
 
     @Test
     public void loginToSwagLabsTestValid() {
@@ -100,10 +99,10 @@ public class Mobile_Native_Local_Test {
     public void login(String user, String pass){
         AndroidDriver driver = getAndroidDriver();
 
-        WebDriverWait wait = new WebDriverWait(driver, 15);
+        WebDriverWait wait = new WebDriverWait(driver, 5);
         final WebElement usernameEdit = wait.until(ExpectedConditions.visibilityOfElementLocated(new MobileBy.ByAccessibilityId(usernameID)));
 
-        //WebElement usernameEdit = (WebElement) driver.findElementByAccessibilityId(usernameID);
+//        WebElement usernameEdit = (WebElement) driver.findElementByAccessibilityId(usernameID);
         usernameEdit.click();
         usernameEdit.sendKeys(user);
 
