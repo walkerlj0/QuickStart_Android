@@ -1,6 +1,0 @@
-tests/BasicTest.class
-tests/Config.class
-tests/Mobile_Native_Local_Test.class
-tests/Mobile_Browser_RDC_Test.class
-tests/Mobile_Native_RDC_Test.class
-tests/Mobile_Browser_Local_Test.class
