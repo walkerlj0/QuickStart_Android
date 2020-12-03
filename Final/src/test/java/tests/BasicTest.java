@@ -21,7 +21,6 @@ public class BasicTest {
     private static final String APP = "/Users/lindsaywalker/Documents/Example_Tests/Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
     private static final String APPIUM = "http://localhost:4723/wd/hub";
 
-    private String sessionId;
     private AndroidDriver driver;
 
     String usernameID = "test-Username";
