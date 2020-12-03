@@ -25,7 +25,7 @@ import static tests.Config.region;
 public class Mobile_Native_EMU_Test {
 
     //    private static final String APP = "/Users/lindsaywalker/Documents/Example_Tests/Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
-    private static final String APP = "Android.SauceLabs.Mobile.Sample.app.2.3.0.apk";
+    private static final String APP = "Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
     //    private static final String APPIUM = "http://localhost:4723/wd/hub"; // See the new URL declared according to region.
     URL url; //added
 //    private String sessionId; // add later
@@ -56,8 +56,9 @@ public class Mobile_Native_EMU_Test {
 
         capabilities.setCapability("deviceName", "Android Emulator");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "9.0");
+        capabilities.setCapability("platformVersion", "8.0");
         capabilities.setCapability("automationName", "UiAutomator2");
+        capabilities.setCapability("appActivity", "com.swaglabsmobileapp.MainActivity"); // added
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
 //            capabilities.setCapability("app", APP);
         capabilities.setCapability("app", "storage:filename=" + APP); //changed from above
