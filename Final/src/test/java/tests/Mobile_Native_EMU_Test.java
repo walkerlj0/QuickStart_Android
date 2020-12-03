@@ -18,7 +18,7 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static tests.Config.host;
+//import static tests.Config.host;
 import static tests.Config.region;
 
 
@@ -27,8 +27,8 @@ public class Mobile_Native_EMU_Test {
     //    private static final String APP = "/Users/lindsaywalker/Documents/Example_Tests/Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
     private static final String APP = "Android.SauceLabs.Mobile.Sample.app.2.3.0.apk";
     //    private static final String APPIUM = "http://localhost:4723/wd/hub"; // See the new URL declared according to region.
-    URL url;
-    private String sessionId; // add later
+    URL url; //added
+//    private String sessionId; // add later
     private AndroidDriver driver;
 
     String usernameID = "test-Username";
@@ -37,41 +37,38 @@ public class Mobile_Native_EMU_Test {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-    public void setup(Method method) throws MalformedURLException {
+
+    public void setUp () throws Exception {
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         System.out.println("Sauce Android Native - BeforeMethod hook"); //added
-//        String methodName = method.getName(); //add later
 
-        public void setUp () throws Exception {
-            DesiredCapabilities capabilities = new DesiredCapabilities();
-            if (host.equals("saucelabs")) {
-                String username = System.getenv("SAUCE_USERNAME");
-                String accesskey = System.getenv("SAUCE_ACCESS_KEY");
-                String sauceUrl;
-                if (region.equalsIgnoreCase("eu")) {
-                    sauceUrl = "@ondemand.eu-central-1.saucelabs.com:443";
-                } else {
-                    sauceUrl = "@ondemand.us-west-1.saucelabs.com:443";
-                }
-                String SAUCE_REMOTE_URL = "https://" + username + ":" + accesskey + sauceUrl + "/wd/hub";
-                url = new URL(SAUCE_REMOTE_URL);
-                //all lines above added
+        String username = System.getenv("SAUCE_USERNAME");
+        String accesskey = System.getenv("SAUCE_ACCESS_KEY");
+        String sauceUrl;
+        if (region.equalsIgnoreCase("eu")) {
+            sauceUrl = "@ondemand.eu-central-1.saucelabs.com:443";
+        } else {
+            sauceUrl = "@ondemand.us-west-1.saucelabs.com:443";
+        }
+        String SAUCE_REMOTE_URL = "https://" + username + ":" + accesskey + sauceUrl + "/wd/hub";
+        url = new URL(SAUCE_REMOTE_URL);
+        //all lines above added
 
-                capabilities.setCapability("deviceName", "Android Emulator");
-                capabilities.setCapability("platformName", "Android");
-                capabilities.setCapability("platformVersion", "9.0");
-                capabilities.setCapability("automationName", "UiAutomator2");
-                capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
+        capabilities.setCapability("deviceName", "Android Emulator");
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("platformVersion", "9.0");
+        capabilities.setCapability("automationName", "UiAutomator2");
+        capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
 //            capabilities.setCapability("app", APP);
-                capabilities.setCapability("app", "storage:filename=" + APP); //changed from above
-            }
+        capabilities.setCapability("app", "storage:filename=" + APP); //changed from above
 
 
 //        driver = new AndroidDriver(new URL(APPIUM), capabilities);
-            driver = new AndroidDriver(url, capabilities);
+        driver = new AndroidDriver(url, capabilities);
 //        String id = ((RemoteWebDriver) getAndroidDriver()).getSessionId().toString();
 //        sessionId.set(id); //fix and add later
 
-        }
+    }
 
         @AfterMethod
         public void tearDown () {
@@ -131,5 +128,5 @@ public class Mobile_Native_EMU_Test {
             return true;
         }
     }
-}
+
 
