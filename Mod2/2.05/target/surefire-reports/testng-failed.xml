@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Android Mobile Demo Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="5" name="Simple execution tests Android(failed)" verbose="0">
+    <classes>
+      <class name="tests.Mobile_Android_Browser_Test">
+        <methods>
+          <include name="loginToSwagLabsTestValid"/>
+          <include name="loginTestValidProblem"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tests.Mobile_Android_Browser_Test -->
+    </classes>
+  </test> <!-- Simple execution tests Android(failed) -->
+</suite> <!-- Failed suite [Android Mobile Demo Suite] -->

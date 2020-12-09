@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Android Native Demo Suite">
+<suite name="Android Mobile Demo Suite">
 <!--       parallel="methods" thread-count="100" verbose="0">-->
 
     <test name="Simple execution tests Android">

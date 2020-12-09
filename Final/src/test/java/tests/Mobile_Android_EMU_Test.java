@@ -18,7 +18,6 @@ import org.testng.annotations.Test;
 import java.lang.reflect.Method;
 import java.net.URL;
 
-//import static tests.Config.host;
 import static tests.Config.region;
 
 
@@ -28,7 +27,6 @@ public class Mobile_Android_EMU_Test {
     private static final String APP = "Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
     //    private static final String APPIUM = "http://localhost:4723/wd/hub"; // See the new URL declared according to region.
     URL url; //added
-//    private String sessionId; // add later
     private AndroidDriver driver;
 
     String usernameID = "test-Username";
@@ -37,13 +35,9 @@ public class Mobile_Android_EMU_Test {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-
-//    public void setUp () throws Exception {
-    public void setUp (Method method) throws Exception { // add later
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        String methodName = method.getName(); // add later
+//   public void setUp () throws Exception { //changes
+    public void setUp(Method method) throws Exception { // added
         System.out.println("Sauce Android Native - BeforeMethod hook"); //added
-
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -55,40 +49,33 @@ public class Mobile_Android_EMU_Test {
         String SAUCE_REMOTE_URL = "https://" + username + ":" + accesskey + sauceUrl + "/wd/hub";
         url = new URL(SAUCE_REMOTE_URL);
         //all lines above added
-
+        DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "Android Emulator");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "8.0");
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
-//            capabilities.setCapability("app", APP);
-        capabilities.setCapability("name", methodName); // add later
-        capabilities.setCapability("app", "storage:filename=" + APP); //changed from above
+        capabilities.setCapability("app", "storage:filename=" + APP);
 
-
-//        driver = new AndroidDriver(new URL(APPIUM), capabilities); // removed and changed below
         driver = new AndroidDriver(url, capabilities);
-//        String id = ((RemoteWebDriver) getAndroidDriver()).getSessionId().toString();// fix and add later
-//        sessionId.set(id); //fix and add later
+
 
     }
 
         @AfterMethod
-//        public void tearDown () {
-        public void teardown(ITestResult result) { // add later
+       public void tearDown(ITestResult result) { // added
             System.out.println("Sauce - AfterMethod hook"); //added
-//            if (driver != null) {
-//                driver.quit();
-//            }
-            try {
-                if (driver != null) {
-                    ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
-                }
-            }finally {
-                System.out.println("Sauce - release driver");
+            if (driver != null) {
                 driver.quit();
             }
-
+//            try {
+//                if (driver != null) {
+//                    ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
+//                }
+//            }finally {
+//                System.out.println("Sauce - release driver");
+//                driver.quit();
+//            }
         }
 
         @Test

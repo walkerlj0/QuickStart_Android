@@ -2,36 +2,36 @@
 <testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-12-07T18:39:21Z" name="Android Native Demo Suite" finished-at="2020-12-07T18:40:32Z" duration-ms="71321">
+  <suite started-at="2020-12-09T18:07:05Z" name="Android Mobile Demo Suite" finished-at="2020-12-09T18:08:27Z" duration-ms="81675">
     <groups>
     </groups>
-    <test started-at="2020-12-07T18:39:21Z" name="Simple Emulator Test Android" finished-at="2020-12-07T18:40:32Z" duration-ms="71321">
+    <test started-at="2020-12-09T18:07:05Z" name="Simple Emulator Test Android" finished-at="2020-12-09T18:08:27Z" duration-ms="81675">
       <class name="tests.Mobile_Android_EMU_Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-07T18:39:21Z" name="setUp" finished-at="2020-12-07T18:39:45Z" duration-ms="24192" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-09T18:07:05Z" name="setUp" finished-at="2020-12-09T18:07:44Z" duration-ms="39190" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginTestValidProblem()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-07T18:39:45Z" name="loginTestValidProblem" finished-at="2020-12-07T18:39:52Z" duration-ms="7092" status="PASS">
+        <test-method signature="loginTestValidProblem()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-09T18:07:44Z" name="loginTestValidProblem" finished-at="2020-12-09T18:07:50Z" duration-ms="6411" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTestValidProblem -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-07T18:39:52Z" name="teardown" finished-at="2020-12-07T18:39:52Z" duration-ms="412" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-09T18:07:50Z" name="teardown" finished-at="2020-12-09T18:07:51Z" duration-ms="366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-07T18:39:52Z" name="setUp" finished-at="2020-12-07T18:40:23Z" duration-ms="30704" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-09T18:07:51Z" name="setUp" finished-at="2020-12-09T18:08:19Z" duration-ms="28180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginToSwagLabsTestValid()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-07T18:40:23Z" name="loginToSwagLabsTestValid" finished-at="2020-12-07T18:40:32Z" duration-ms="8610" status="PASS">
+        <test-method signature="loginToSwagLabsTestValid()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-09T18:08:19Z" name="loginToSwagLabsTestValid" finished-at="2020-12-09T18:08:26Z" duration-ms="7182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToSwagLabsTestValid -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-07T18:40:32Z" name="teardown" finished-at="2020-12-07T18:40:32Z" duration-ms="294" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:tests.Mobile_Android_EMU_Test@31206beb]" started-at="2020-12-09T18:08:26Z" name="teardown" finished-at="2020-12-09T18:08:27Z" duration-ms="333" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- tests.Mobile_Android_EMU_Test -->
     </test> <!-- Simple Emulator Test Android -->
-  </suite> <!-- Android Native Demo Suite -->
+  </suite> <!-- Android Mobile Demo Suite -->
 </testng-results>
