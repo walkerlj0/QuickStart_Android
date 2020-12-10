@@ -3,7 +3,6 @@ package tests;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -22,7 +21,6 @@ import static tests.Config.region;
 
 
 public class Mobile_Android_EMU_Test {
-
     //    private static final String APP = "/Users/lindsaywalker/Documents/Example_Tests/Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
     private static final String APP = "Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
     //    private static final String APPIUM = "http://localhost:4723/wd/hub"; // See the new URL declared according to region.
@@ -35,8 +33,7 @@ public class Mobile_Android_EMU_Test {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-//   public void setUp () throws Exception { //changes
-    public void setUp(Method method) throws Exception { // added
+    public void setUp(Method method) throws Exception {
         System.out.println("Sauce Android Native - BeforeMethod hook"); //added
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
@@ -63,7 +60,7 @@ public class Mobile_Android_EMU_Test {
     }
 
         @AfterMethod
-       public void tearDown(ITestResult result) { // added
+       public void tearDown(ITestResult result) {
             System.out.println("Sauce - AfterMethod hook"); //added
             if (driver != null) {
                 driver.quit();

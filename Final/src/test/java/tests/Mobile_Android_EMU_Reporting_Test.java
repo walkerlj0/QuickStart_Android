@@ -35,8 +35,8 @@ public class Mobile_Android_EMU_Reporting_Test {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-    public void setUp (Method method) throws Exception { // add later
-        System.out.println("Sauce Android Native - BeforeMethod hook"); //added
+    public void setUp (Method method) throws Exception {
+        System.out.println("Sauce Android EMU App Test with Reporting - BeforeMethod hook"); //added
         String methodName = method.getName(); //added
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
@@ -62,7 +62,7 @@ public class Mobile_Android_EMU_Reporting_Test {
     }
 
     @AfterMethod
-    public void teardown(ITestResult result) { // add later
+    public void teardown(ITestResult result) {
         System.out.println("Sauce - AfterMethod hook"); //added
 //            if (driver != null) {
 //                driver.quit();

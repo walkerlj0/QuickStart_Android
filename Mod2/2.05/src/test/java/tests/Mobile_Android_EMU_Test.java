@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 import java.lang.reflect.Method;
 import java.net.URL;
 
-import static tests.Config.region; /added
+import static tests.Config.region; // added
 
 
 public class Mobile_Android_EMU_Test {
@@ -33,8 +33,6 @@ public class Mobile_Android_EMU_Test {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-
-//    public void setUp () throws Exception {
     public void setUp (Method method) throws Exception { // add later
         System.out.println("Sauce Android Native - BeforeMethod hook"); //added
 
@@ -55,7 +53,7 @@ public class Mobile_Android_EMU_Test {
         capabilities.setCapability("platformVersion", "8.0");
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
-            capabilities.setCapability("app", APP); // d
+        capabilities.setCapability("app", APP); //
         capabilities.setCapability("browserName", "Chrome");//added
 
 
@@ -66,7 +64,7 @@ public class Mobile_Android_EMU_Test {
     }
 
         @AfterMethod
-        public void teardown(ITestResult result) { // add later
+        public void teardown(ITestResult result) {
             System.out.println("Sauce - AfterMethod hook"); //added
             try {
                 if (driver != null) {

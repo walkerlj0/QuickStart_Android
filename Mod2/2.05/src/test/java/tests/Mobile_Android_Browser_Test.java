@@ -9,21 +9,20 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
 import java.net.URL;
 
 import static tests.Config.region;
 
 public class Mobile_Android_Browser_Test {
-
     //    private static final String APP = "/Users/lindsaywalker/Documents/Example_Tests/Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
     //    private static final String APPIUM = "http://localhost:4723/wd/hub"; // See the new URL declared according to region.
     URL url; //added
-
-
     private AndroidDriver driver;
 
     String usernameID = "test-Username";
@@ -32,9 +31,8 @@ public class Mobile_Android_Browser_Test {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-    public void setUp() throws Exception {
+    public void setUp (Method method) throws Exception {
         System.out.println("Sauce Android Mobile Browser EMU - BeforeMethod hook"); //added
-
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -49,19 +47,20 @@ public class Mobile_Android_Browser_Test {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "Android Emulator"); // added
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion","8.0" ); //add platformVersion
+        capabilities.setCapability("platformVersion","8.0" );
         capabilities.setCapability("automationName", "UiAutomator2");
-//        capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
-        capabilities.setCapability("browserName", "Chrome");
+//        capabilities.setCapability("app", APP); //deleted
+//        capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity"); //deleted
+        capabilities.setCapability("browserName", "Chrome"); //added
 
 
-//        driver = new AndroidDriver(new URL(APPIUM), capabilities); //removed
+//       driver = new AndroidDriver(new URL(APPIUM), capabilities); // removed and changed to below
         driver = new AndroidDriver(url, capabilities); //added
 
     }
-`
+
     @AfterMethod
-    public void tearDown() {
+    public void teardown(ITestResult result) {
         if (driver != null) {
             driver.quit();
         }

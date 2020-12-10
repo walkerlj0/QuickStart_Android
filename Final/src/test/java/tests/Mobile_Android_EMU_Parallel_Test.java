@@ -36,7 +36,7 @@ public class Mobile_Android_EMU_Parallel_Test {
 
     @BeforeMethod
     public void setUp (Method method) throws Exception { // add later
-        System.out.println("Sauce Android Native - BeforeMethod hook");
+        System.out.println("Sauce Android EMU App Test - Parallel - BeforeMethod hook");
         String methodName = method.getName();
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
@@ -65,7 +65,7 @@ public class Mobile_Android_EMU_Parallel_Test {
     public void teardown(ITestResult result) {
         System.out.println("Sauce - AfterMethod hook");
         try {
-            if (getAndroidDriver() != null) { // //changed to  getAndroidDriver()
+            if (getAndroidDriver() != null) { // changed to getAndroidDriver()
                 ((JavascriptExecutor) getAndroidDriver()).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));  //changed to  getAndroidDriver()
             }
         }finally {
