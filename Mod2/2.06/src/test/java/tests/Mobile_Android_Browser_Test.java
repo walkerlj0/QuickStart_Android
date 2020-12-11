@@ -1,21 +1,22 @@
 package tests;
 
-import io.appium.java_client.MobileBy; //remove
+import io.appium.java_client.MobileBy;// removed
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException; //remove
-import org.openqa.selenium.WebElement; //remove
+import org.openqa.selenium.TimeoutException; // removed
+import org.openqa.selenium.WebElement; // removed
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.openqa.selenium.support.ui.ExpectedConditions; //remove
-import org.openqa.selenium.support.ui.WebDriverWait; // remove
+import org.openqa.selenium.support.ui.ExpectedConditions; // removed
+import org.openqa.selenium.support.ui.WebDriverWait; // removed
 import org.testng.Assert;
-import org.testng.ITestResult; //remove
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.lang.reflect.Method; //remove
+import java.lang.reflect.Method;
 import java.net.URL;
+
 import static tests.Config.region;
 
 public class Mobile_Android_Browser_Test {
@@ -36,7 +37,7 @@ public class Mobile_Android_Browser_Test {
     @BeforeMethod
     public void setUp () throws Exception {
         System.out.println("Sauce Android Mobile Browser EMU - BeforeMethod hook"); //added
-        URL url; //added
+//        URL url; //added
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -46,7 +47,7 @@ public class Mobile_Android_Browser_Test {
             sauceUrl = "@ondemand.us-west-1.saucelabs.com:443";
         }
         String SAUCE_REMOTE_URL = "https://" + username + ":" + accesskey + sauceUrl + "/wd/hub";
-        url = new URL(SAUCE_REMOTE_URL);
+        URL url = new URL(SAUCE_REMOTE_URL);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "Android Emulator");
@@ -88,7 +89,6 @@ public class Mobile_Android_Browser_Test {
     }
 
     public boolean isOnProductsPage() {
-
         return driver.findElement(productTitle).isDisplayed();
     }
 }
