@@ -65,14 +65,6 @@ public class Mobile_Android_EMU_Test {
             if (driver != null) {
                 driver.quit();
             }
-//            try {
-//                if (driver != null) {
-//                    ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
-//                }
-//            }finally {
-//                System.out.println("Sauce - release driver");
-//                driver.quit();
-//            }
         }
 
         @Test

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-12-11T18:47:13Z" name="Android Mobile Demo Suite" finished-at="2020-12-11T18:47:46Z" duration-ms="33272">
+    <groups>
+    </groups>
+    <test started-at="2020-12-11T18:47:13Z" name="Simple execution tests Android" finished-at="2020-12-11T18:47:46Z" duration-ms="33272">
+      <class name="tests.Mobile_Android_Browser_Test">
+        <test-method is-config="true" signature="setUp(java.lang.reflect.Method)[pri:0, instance:tests.Mobile_Android_Browser_Test@701fc37a]" started-at="2020-12-11T18:47:13Z" name="setUp" finished-at="2020-12-11T18:47:43Z" duration-ms="29795" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void tests.Mobile_Android_Browser_Test.loginToSwagLabsTestValid()]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginToSwagLabsTestValid()[pri:0, instance:tests.Mobile_Android_Browser_Test@701fc37a]" started-at="2020-12-11T18:47:43Z" name="loginToSwagLabsTestValid" finished-at="2020-12-11T18:47:46Z" duration-ms="3199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToSwagLabsTestValid -->
+        <test-method is-config="true" signature="teardown(org.testng.ITestResult)[pri:0, instance:tests.Mobile_Android_Browser_Test@701fc37a]" started-at="2020-12-11T18:47:46Z" name="teardown" finished-at="2020-12-11T18:47:46Z" duration-ms="263" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginToSwagLabsTestValid status=SUCCESS method=Mobile_Android_Browser_Test.loginToSwagLabsTestValid()[pri:0, instance:tests.Mobile_Android_Browser_Test@701fc37a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- tests.Mobile_Android_Browser_Test -->
+    </test> <!-- Simple execution tests Android -->
+  </suite> <!-- Android Mobile Demo Suite -->
+</testng-results>

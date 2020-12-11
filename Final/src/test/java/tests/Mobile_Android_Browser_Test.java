@@ -22,19 +22,22 @@ import static tests.Config.region;
 public class Mobile_Android_Browser_Test {
     //    private static final String APP = "/Users/lindsaywalker/Documents/Example_Tests/Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
     //    private static final String APPIUM = "http://localhost:4723/wd/hub"; // See the new URL declared according to region.
-    URL url; //added
-
-
+    String appUrl = "https://www.saucedemo.com/"; //added
     private AndroidDriver driver;
-
+//    String usernameID = "test-Username";
+//    String passwordID = "test-Password";
+//    String submitButtonID = "test-LOGIN";
+//    By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
     By usernameInput = By.id("user-name");
     By passwordInput = By.id("password");
     By submitButton = By.className("btn_action");
     By productTitle = By.className("product_label");
+    //all 4 vars changed from app test
 
     @BeforeMethod
     public void setUp (Method method) throws Exception {
         System.out.println("Sauce Android Mobile Browser EMU - BeforeMethod hook"); //added
+        URL url; //added
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -53,7 +56,6 @@ public class Mobile_Android_Browser_Test {
         capabilities.setCapability("automationName", "UiAutomator2");
 //        capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity"); //deleted
         capabilities.setCapability("browserName", "Chrome");// added
-        capabilities.setCapability("browserVersion", "86.0");
 //        driver = new AndroidDriver(new URL(APPIUM), capabilities); //removed
         driver = new AndroidDriver(url, capabilities); //added
 
@@ -70,24 +72,15 @@ public class Mobile_Android_Browser_Test {
     @Test
     public void loginToSwagLabsTestValid() {
         System.out.println("Sauce - Start loginToSwagLabsTestValid test");
-
+        driver.get(appUrl);
         login("standard_user", "secret_sauce");
 
         // Verification
         Assert.assertTrue(isOnProductsPage());
     }
 
-//    @Test
-//    public void loginTestValidProblem() {
-//        System.out.println("Sauce - Start loginTestValidProblem test");
-//
-//        login("problem_user", "secret_sauce");
-//
-//        // Verification - we on Product page
-//        Assert.assertTrue(isOnProductsPage());
-//    }
-
     public void login(String user, String pass){
+        driver.get(appUrl);
         driver.findElement(usernameInput).sendKeys(user);
         driver.findElement(passwordInput).sendKeys(pass);
 

@@ -1,6 +1,0 @@
-#surefire_0
-#Wed Dec 09 14:58:24 CST 2020
-basedir=/Users/lindsaywalker/Documents/Example_Tests/QuickStart_Android/Mod2/2.05
-user.dir=/Users/lindsaywalker/Documents/Example_Tests/QuickStart_Android/Mod2/2.05
-testngXmlFile=mobile_android_browser_test.xml
-localRepository=/Users/lindsaywalker/.m2/repository

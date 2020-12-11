@@ -13,6 +13,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
 import java.net.URL;
 
 
@@ -29,7 +30,7 @@ public class BasicTest {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-    public void setUp() throws Exception {
+    public void setUp(Method method) throws Exception {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "Android Emulator"); //This will change to type of device e.g. Pixel 4 on Saucelabs
         capabilities.setCapability("platformName", "Android");

@@ -71,7 +71,7 @@ public class Mobile_Android_EMU_Parallel_Test {
         }finally {
             System.out.println("Sauce - release driver");
             getAndroidDriver().quit();  //changed to  getAndroidDriver()
-        } //try finally added
+        } //try, finally added
 
     }
     public  AndroidDriver getAndroidDriver() { return androidDriver.get(); } // added

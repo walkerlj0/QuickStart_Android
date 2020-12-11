@@ -74,7 +74,7 @@ public class Mobile_Android_EMU_Reporting_Test {
         }finally {
             System.out.println("Sauce - release driver");
             driver.quit();
-        } //try finally added
+        } //try, finally added with JS for job-results
 
     }
 
