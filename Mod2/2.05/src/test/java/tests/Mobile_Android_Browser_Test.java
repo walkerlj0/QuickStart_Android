@@ -35,9 +35,9 @@ public class Mobile_Android_Browser_Test {
     //all 4 vars changed from app test
 
     @BeforeMethod
-    public void setUp (Method method) throws Exception {
+    public void setUp () throws Exception {
         System.out.println("Sauce Android Mobile Browser EMU - BeforeMethod hook"); //added
-        URL url; //added
+//        URL url; //added
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -47,7 +47,7 @@ public class Mobile_Android_Browser_Test {
             sauceUrl = "@ondemand.us-west-1.saucelabs.com:443";
         }
         String SAUCE_REMOTE_URL = "https://" + username + ":" + accesskey + sauceUrl + "/wd/hub";
-        url = new URL(SAUCE_REMOTE_URL);
+        URL url = new URL(SAUCE_REMOTE_URL);
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "Android Emulator");
@@ -62,7 +62,7 @@ public class Mobile_Android_Browser_Test {
     }
 
     @AfterMethod
-    public void teardown(ITestResult result) {
+    public void teardown() {
         if (driver != null) {
             driver.quit();
         }

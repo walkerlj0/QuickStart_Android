@@ -33,7 +33,8 @@ public class Mobile_Android_EMU_Test {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-    public void setUp (Method method) throws Exception { // add later
+//    public void setUp (Method method) throws Exception {
+    public void setUp() throws Exception {
         System.out.println("Sauce Android Native - BeforeMethod hook"); //added
 
         String username = System.getenv("SAUCE_USERNAME");
@@ -50,7 +51,7 @@ public class Mobile_Android_EMU_Test {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("deviceName", "Android Emulator");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "8.0");
+        capabilities.setCapability("platformVersion", "9.0");
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
         capabilities.setCapability("app", APP); //
@@ -64,17 +65,11 @@ public class Mobile_Android_EMU_Test {
     }
 
         @AfterMethod
-        public void teardown(ITestResult result) {
-            System.out.println("Sauce - AfterMethod hook"); //added
-            try {
-                if (driver != null) {
-                    ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
-                }
-            }finally {
-                System.out.println("Sauce - release driver");
+//        public void teardown(ITestResult result) {
+        public void teardown() {
+            if (driver != null) {
                 driver.quit();
             }
-
         }
 
         @Test

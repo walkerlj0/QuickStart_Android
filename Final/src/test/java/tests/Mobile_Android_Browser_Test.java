@@ -35,7 +35,7 @@ public class Mobile_Android_Browser_Test {
     //all 4 vars changed from app test
 
     @BeforeMethod
-    public void setUp (Method method) throws Exception {
+    public void setUp () throws Exception {
         System.out.println("Sauce Android Mobile Browser EMU - BeforeMethod hook"); //added
         URL url; //added
         String username = System.getenv("SAUCE_USERNAME");
@@ -62,7 +62,7 @@ public class Mobile_Android_Browser_Test {
     }
 
     @AfterMethod
-    public void teardown(ITestResult result) {
+    public void teardown() {
         if (driver != null) {
             driver.quit();
         }
