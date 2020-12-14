@@ -3,28 +3,25 @@ package tests;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import java.lang.reflect.Method;
+
 import java.net.URL;
 
 import static tests.Config.region; // added
 
 
 public class Mobile_Android_EMU_Test {
-    private static final String APP = "/Users/lindsaywalker/Documents/Example_Tests/Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
+    private static final String APP = "Android.SauceLabs.Mobile.Sample.app.2.7.0.apk"; //changed from local filepath
 //    private static final String APPIUM = "http://localhost:4723/wd/hub"; // See the new URL declared according to region.
     URL url; //added
-
     private AndroidDriver driver;
 
     String usernameID = "test-Username";
@@ -33,10 +30,8 @@ public class Mobile_Android_EMU_Test {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-//    public void setUp (Method method) throws Exception {
     public void setUp() throws Exception {
-        System.out.println("Sauce Android Native - BeforeMethod hook"); //added
-
+        System.out.println("Sauce Android App Test - BeforeMethod hook"); //added
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -49,19 +44,14 @@ public class Mobile_Android_EMU_Test {
         url = new URL(SAUCE_REMOTE_URL);
         //all lines above added
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "Android Emulator");
+        capabilities.setCapability("deviceName", "Android GoogleAPI Emulator"); //Updated to GoogleAPI Emulator
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "9.0");
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
-        capabilities.setCapability("app", APP); //
-        capabilities.setCapability("browserName", "Chrome");//added
+        capabilities.setCapability("app", "storage:filename=" + APP); //updated
 
-
-//       driver = new AndroidDriver(new URL(APPIUM), capabilities); // removed and changed to below
-        driver = new AndroidDriver(url, capabilities);
-
-
+        driver = new AndroidDriver(url, capabilities); //updated
     }
 
         @AfterMethod

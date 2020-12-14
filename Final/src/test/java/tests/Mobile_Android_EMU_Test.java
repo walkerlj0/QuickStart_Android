@@ -34,7 +34,7 @@ public class Mobile_Android_EMU_Test {
 
     @BeforeMethod
     public void setUp(Method method) throws Exception {
-        System.out.println("Sauce Android Native - BeforeMethod hook"); //added
+        System.out.println("Sauce Android App Test - BeforeMethod hook"); //added
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -47,16 +47,14 @@ public class Mobile_Android_EMU_Test {
         url = new URL(SAUCE_REMOTE_URL);
         //all lines above added
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "Android Emulator");
+        capabilities.setCapability("deviceName", "Android GoogleAPI Emulator"); //Updated to GoogleAPI Emulator
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion", "8.0");
+        capabilities.setCapability("platformVersion", "9.0");
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
-        capabilities.setCapability("app", "storage:filename=" + APP);
+        capabilities.setCapability("app", "storage:filename=" + APP); //updated
 
-        driver = new AndroidDriver(url, capabilities);
-
-
+        driver = new AndroidDriver(url, capabilities); //updated
     }
 
         @AfterMethod

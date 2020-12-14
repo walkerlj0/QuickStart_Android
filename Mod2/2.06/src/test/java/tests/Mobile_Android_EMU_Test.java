@@ -49,7 +49,7 @@ public class Mobile_Android_EMU_Test {
         url = new URL(SAUCE_REMOTE_URL);
         //all lines above added
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "Android Emulator");
+        capabilities.setCapability("deviceName", "Android GoogleAPI Emulator"); //Updated to GoogleAPI Emulator
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "9.0");
         capabilities.setCapability("automationName", "UiAutomator2");
