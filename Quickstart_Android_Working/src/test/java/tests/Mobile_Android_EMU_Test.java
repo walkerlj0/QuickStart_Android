@@ -14,10 +14,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.net.URL;
+
 import static tests.Config.region; //added
 
+
 public class Mobile_Android_EMU_Test {
-    private static final String APP = "Android.SauceLabs.Mobile.Sample.app.2.7.0.apk"; //updated
+    private static final String APP = "Android.SauceLabs.Mobile.Sample.app.2.7.0.apk"; //modified
     URL url; //added
     private AndroidDriver driver;
 
@@ -28,27 +30,27 @@ public class Mobile_Android_EMU_Test {
 
     @BeforeMethod
     public void setUp() throws Exception {
-        String username = System.getenv("SAUCE_USERNAME"); //added
-        String accesskey = System.getProperty("SAUCE_ACCESS_KEY"); //added
+        String username = System.getenv("SAUCE_USERNAME");
+        String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
         if (region.equalsIgnoreCase("eu")) {
             sauceUrl = "@ondemand.eu-central-1.saucelabs.com:443";
-        } else {
-            sauceUrl = "@ondemand.use-west-1.saucelabs.com:443";
+        }else {
+            sauceUrl = "@ondemand.us-west-1.saucelabs.com:443";
         }
-        String SAUCE_REMOTE_URL = "https" + username + ":" + accesskey + sauceUrl + "/wd/hub";
-        url new URL(SAUCE_REMOTE_URL);
-        // all lines to @BeforeMethod added
+        String SAUCE_REMOTE_URL = "https://" + username + ":" + accesskey + sauceUrl +"/wd/hub";
+        url = new URL(SAUCE_REMOTE_URL);
+        //all lines above in setUp method added to connect to Sauce Labs
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "Android Emulator"); //This will change to type of device e.g. Pixel 4 on Saucelabs
+        capabilities.setCapability("deviceName", "Android Emulator"); //
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("platformVersion","9.0" ); //add platformVersion
+        capabilities.setCapability("platformVersion","9.0" ); //can update
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
-        capabilities.setCapability("app", APP);
+        capabilities.setCapability("app", APP); //Updated for Sauce Storage
 
 
-        driver = new AndroidDriver(url, capabilities) //updated
+        driver = new AndroidDriver(url, capabilities); //updated
 
     }
 

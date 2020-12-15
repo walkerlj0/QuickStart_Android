@@ -31,7 +31,7 @@ public class Mobile_Android_EMU_Test {
 
     @BeforeMethod
     public void setUp() throws Exception {
-        System.out.println("Sauce Android App Test - BeforeMethod hook"); //added
+        System.out.println("Sauce Android App EMU Test - BeforeMethod hook"); //added
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -55,12 +55,12 @@ public class Mobile_Android_EMU_Test {
     }
 
         @AfterMethod
-//        public void teardown(ITestResult result) {
-        public void teardown() {
-            if (driver != null) {
-                driver.quit();
+            System.out.println("Sauce Android Mobile EMU Test - AfterMethod hook");// added
+            public void teardown() {
+                if (driver != null) {
+                    driver.quit();
+                }
             }
-        }
 
         @Test
         public void loginToSwagLabsTestValid () {
