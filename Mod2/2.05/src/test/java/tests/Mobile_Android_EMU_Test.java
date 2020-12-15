@@ -55,8 +55,8 @@ public class Mobile_Android_EMU_Test {
     }
 
         @AfterMethod
-            System.out.println("Sauce Android Mobile EMU Test - AfterMethod hook");// added
             public void teardown() {
+            System.out.println("Sauce Android Mobile EMU Test - AfterMethod hook");// added
                 if (driver != null) {
                     driver.quit();
                 }

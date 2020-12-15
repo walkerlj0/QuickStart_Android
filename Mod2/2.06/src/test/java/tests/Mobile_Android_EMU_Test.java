@@ -53,8 +53,7 @@ public class Mobile_Android_EMU_Test {
         capabilities.setCapability("platformVersion", "9.0");
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
-        capabilities.setCapability("app", APP); //
-        capabilities.setCapability("browserName", "Chrome");//added
+        capabilities.setCapability("app","storage:filename=" + APP); //Updated
 
 
 //       driver = new AndroidDriver(new URL(APPIUM), capabilities); // removed and changed to below

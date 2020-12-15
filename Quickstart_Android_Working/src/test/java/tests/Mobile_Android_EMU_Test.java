@@ -30,6 +30,7 @@ public class Mobile_Android_EMU_Test {
 
     @BeforeMethod
     public void setUp() throws Exception {
+        System.out.println("Sauce Android App EMU Test - BeforeMethod Hook");
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -42,12 +43,12 @@ public class Mobile_Android_EMU_Test {
         url = new URL(SAUCE_REMOTE_URL);
         //all lines above in setUp method added to connect to Sauce Labs
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "Android Emulator"); //
+        capabilities.setCapability("deviceName", "Android GoogleAPI Emulator"); //
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion","9.0" ); //can update
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
-        capabilities.setCapability("app", APP); //Updated for Sauce Storage
+        capabilities.setCapability("app", "storage:filename=" + APP); //Updated for Sauce Storage
 
 
         driver = new AndroidDriver(url, capabilities); //updated
@@ -56,6 +57,7 @@ public class Mobile_Android_EMU_Test {
 
     @AfterMethod
     public void tearDown() {
+        System.out.println("Sauce Android App EMU Test - AfterMethod Hook");
         if (driver != null) {
             driver.quit();
         }
@@ -64,7 +66,6 @@ public class Mobile_Android_EMU_Test {
 
     @Test
     public void loginToSwagLabsTestValid() {
-        System.out.println("Sauce - Start loginToSwagLabsTestValid test");
         login("standard_user", "secret_sauce");
 
         // Verification
