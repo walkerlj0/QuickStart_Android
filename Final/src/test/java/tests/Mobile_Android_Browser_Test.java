@@ -62,6 +62,7 @@ public class Mobile_Android_Browser_Test {
 
     @AfterMethod
     public void teardown() {
+        System.out.println("Sauce Android Mobile Browser EMU Test - AfterMethod Hook");// added
         if (driver != null) {
             driver.quit();
         }
@@ -70,10 +71,9 @@ public class Mobile_Android_Browser_Test {
 
     @Test
     public void loginToSwagLabsTestValid() {
-        System.out.println("Sauce - Start loginToSwagLabsTestValid test");
+        System.out.println("Sauce Android Mobile Browser EMU Test - AfterMethod Hook");
         driver.get(appUrl);
         login("standard_user", "secret_sauce");
-
         // Verification
         Assert.assertTrue(isOnProductsPage());
     }
@@ -82,7 +82,6 @@ public class Mobile_Android_Browser_Test {
         driver.get(appUrl);
         driver.findElement(usernameInput).sendKeys(user);
         driver.findElement(passwordInput).sendKeys(pass);
-
         driver.findElement(submitButton).click();
 
     }

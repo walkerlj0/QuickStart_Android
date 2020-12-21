@@ -3,6 +3,7 @@ package tests;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -12,18 +13,18 @@ import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.ITestResult; //added
+import java.lang.reflect.Method; //added
 
-import java.lang.reflect.Method;
 import java.net.URL;
 
 import static tests.Config.region;
 
 
-public class Mobile_Android_EMU_Test {
-    //    private static final String APP = "/Users/lindsaywalker/Documents/Example_Tests/Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
+public class Mobile_Android_EMU_Reporting_Test {
     private static final String APP = "Android.SauceLabs.Mobile.Sample.app.2.7.0.apk";
-    //    private static final String APPIUM = "http://localhost:4723/wd/hub"; // See the new URL declared according to region.
     URL url; //added
+
     private AndroidDriver driver;
 
     String usernameID = "test-Username";
@@ -32,8 +33,9 @@ public class Mobile_Android_EMU_Test {
     By ProductTitle = By.xpath("//android.widget.TextView[@text='PRODUCTS']");
 
     @BeforeMethod
-    public void setUp() throws Exception {
-        System.out.println("Sauce Android App EMU Test - BeforeMethod hook"); //added
+    public void setUp (Method method) throws Exception { //updated
+        System.out.println("Sauce Android App EMU Reporting Test - BeforeMethod hook"); //updated
+        String methodName = method.getName(); // added
         String username = System.getenv("SAUCE_USERNAME");
         String accesskey = System.getenv("SAUCE_ACCESS_KEY");
         String sauceUrl;
@@ -46,20 +48,25 @@ public class Mobile_Android_EMU_Test {
         url = new URL(SAUCE_REMOTE_URL);
         //all lines above added
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("deviceName", "Android GoogleAPI Emulator"); //Updated to GoogleAPI Emulator
+        capabilities.setCapability("deviceName", "Android GoogleAPI Emulator");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("platformVersion", "9.0");
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appWaitActivity", "com.swaglabsmobileapp.MainActivity");
-        capabilities.setCapability("app", "storage:filename=" + APP); //updated
-
-        driver = new AndroidDriver(url, capabilities); //updated
+        capabilities.setCapability("app","storage:filename=" + APP);
+        capabilities.setCapability("name", methodName); //added
+        driver = new AndroidDriver(url, capabilities);
     }
 
         @AfterMethod
-        public void tearDown() {
-            System.out.println("Sauce Android App EMU Test - AfterMethod hook");// added
-            if (driver != null) {
+        public void tearDown(ITestResult result) {
+            System.out.println("Sauce Android Mobile EMU Reporting Test - AfterMethod hook"); // added
+            try {
+                if (driver != null) {
+                    ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
+                }
+            }finally {
+                System.out.println("Sauce- released driver");
                 driver.quit();
             }
         }
